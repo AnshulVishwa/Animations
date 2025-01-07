@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Setu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="background">
         <div onclick="change()" class="content">
             <img src="./logo.png">
         </div>
+        
     </main>
 </body>
 </html>
@@ -26,6 +30,7 @@
         } , 4800 )
         setTimeout( () => {
             document.querySelector(".background").style.background = "white"
+            document.body.innerHTML = `<video autoplay><source src="video.mp4" type="video/mp4"></video>`
         } , 5500 )
     }
 </script>

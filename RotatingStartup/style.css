@@ -1,6 +1,16 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Cinzel Decorative", serif;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .background {
@@ -12,8 +22,8 @@
     background-color: #081f2e;
 }
 .content {
-    height: 15em;
-    width: 15em;
+    height: 10em;
+    width: 10em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,59 +36,74 @@ img {
     border: 2px solid #212121;
 }
 
-.animate{
-    animation: animate 5s linear 1;
-}
-
 .remove{
     display: none;
 }
 
 .backgroundAnimate{
-    animation: show 0.5s linear 1;
+    background-color: #ffffff;
+}
+
+.textbox {
+    height: 10em;
+    width: 25em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.welcome {
+    font-size: 28px;
+}
+.career {
+    font-size: 48px;
+    text-align: right;
+}
+
+.animate{
+    animation: animate 5s linear 1;
 }
 
 @keyframes animate {
-    0%{ transform: translateY(-0em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    10%{ transform: translateY(-0.5em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    20%{ transform: translateY(-1em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    25%{ transform: translateY(-1.5em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    30%{ transform: translateY(-2em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    35%{ transform: translateY(-2.5em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    40%{ transform: translateY(-3em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    43%{ transform: translateY(-3.5em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    47%{ transform: translateY(-4em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    50%{ transform: translateY(-4.5em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    53%{ transform: translateY(-5em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    57%{ transform: translateY(-5.5em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    60%{ transform: translateY(-6em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    62%{ transform: translateY(-6.3em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    64%{ transform: translateY(-6.7em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    66%{ transform: translateY(-6.9em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    68%{ transform: translateY(-7.1em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    70%{ transform: translateY(-7.3em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    72%{ transform: translateY(-7.5em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    74%{ transform: translateY(-7.7em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    76%{ transform: translateY(-7.9em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    78%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    80%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    82%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    84%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    86%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    87%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    88%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1  }
-    89%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1  }
-    90%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0.9  }
-    91%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:0.8  }
-    92%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0.7  }
-    93%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:0.6  }
-    94%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0.5  }
-    95%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:0.4  }
-    96%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0.3  }
-    97%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:0.2  }
-    98%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0.1  }
-    99%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:0.1  }
-    100%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0  }
+    0%{ transform: translateY(-0em) rotate3d(0,0,0 ,90deg); opacity:1 ; width: 10em;height: 10em;  }
+    10%{ transform: translateY(-0.5em) rotate3d(0,10,0 ,90deg); opacity:1; width: 10.5em;height: 10.5em;  }
+    20%{ transform: translateY(-1em) rotate3d(0,0,0 ,90deg); opacity:1;; width: 11em;height: 11em;  }
+    25%{ transform: translateY(-1.5em) rotate3d(0,10,0 ,90deg); opacity:1; width: 11.5em;height: 11.5em;  }
+    30%{ transform: translateY(-2em) rotate3d(0,0,0 ,90deg); opacity:1; width: 12em;height: 12em;  }
+    35%{ transform: translateY(-2.5em) rotate3d(0,10,0 ,90deg); opacity:1; width: 12.5em;height: 12.5em;  }
+    40%{ transform: translateY(-3em) rotate3d(0,0,0 ,90deg); opacity:1; width: 13.0em;height: 13.0em;  }
+    43%{ transform: translateY(-3.5em) rotate3d(0,10,0 ,90deg); opacity:1; width: 13.5em;height: 13.5em;  }
+    47%{ transform: translateY(-4em) rotate3d(0,0,0 ,90deg); opacity:1; width: 14.0em;height: 14.0em;  }
+    50%{ transform: translateY(-4.5em) rotate3d(0,10,0 ,90deg); opacity:1; width: 14.5em;height: 14.5em;  }
+    53%{ transform: translateY(-5em) rotate3d(0,0,0 ,90deg); opacity:1; width: 15.0em;height: 15.0em;  }
+    57%{ transform: translateY(-5.5em) rotate3d(0,10,0 ,90deg); opacity:1; width: 15.5em;height: 15.5em;  }
+    60%{ transform: translateY(-6em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    62%{ transform: translateY(-6.3em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    64%{ transform: translateY(-6.7em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    66%{ transform: translateY(-6.9em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    68%{ transform: translateY(-7.1em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    70%{ transform: translateY(-7.3em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    72%{ transform: translateY(-7.5em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    74%{ transform: translateY(-7.7em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    76%{ transform: translateY(-7.9em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    78%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    80%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    82%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    84%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    86%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    87%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    88%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    89%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:1; width: 16em;height: 16em;  }
+    90%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0.9; width: 16em;height: 16em;  }
+    91%{ transform: translateY(-8em) rotate3d(0,0,0 ,90deg); opacity:0.8; width: 16em;height: 16em;  }
+    92%{ transform: translateY(-8em) rotate3d(0,10,0 ,90deg); opacity:0.7; width: 16em;height: 16em;  }
+    93%{ transform: translateY(-8em)  rotate3d(0,0,0 ,90deg); opacity:0.6; width: 16em;height: 16em;  }
+    94%{ transform: translateY(-8em) scale(1) rotate3d(0,10,0 ,90deg); opacity:0.5; width: 16em;height: 16em;  }
+    95%{ transform: translateY(-8em) scale(5) rotate3d(0,0,0 ,90deg); opacity:0.4; width: 16em;height: 16em;  }
+    96%{ transform: translateY(-8em) scale(10) rotate3d(0,10,0 ,90deg); opacity:0.3; width: 16em;height: 16em;  }
+    97%{ transform: translateY(-8em) scale(20) rotate3d(0,0,0 ,90deg); opacity:0.2; width: 16em;height: 16em;  }
+    98%{ transform: translateY(-8em) scale(35) rotate3d(0,10,0 ,90deg); opacity:0.1; width: 16em;height: 16em;  }
+    99%{ transform: translateY(-8em) scale(50) rotate3d(0,0,0 ,90deg); opacity:0.1; width: 16em;height: 16em;  }
+    100%{ transform: translateY(-8em) scale(65) rotate3d(0,10,0 ,90deg); opacity:0; width: 16em;height: 16em;}
 }
 
 @keyframes show{
