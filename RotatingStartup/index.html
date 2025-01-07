@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Setu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="background">
+        <div onclick="change()" class="content">
+            <img src="./logo.png">
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    function change(){
+        document.querySelector(".content").classList.add("animate")
+        setTimeout( () => {
+            document.querySelector(".content").classList.add("remove")
+        } , 5000 )
+        setTimeout( () => {
+            document.querySelector(".background").classList.add("backgroundAnimate")
+        } , 4800 )
+        setTimeout( () => {
+            document.querySelector(".background").style.background = "white"
+        } , 5500 )
+    }
+</script>
