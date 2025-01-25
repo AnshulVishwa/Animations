@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #show{
+            display: flex;
+            height: 2em;
+            animation-name: animateLoader;
+            animation-timing-function: ease-in;
+            animation-duration: 2ms;
+            animation-iteration-count: 1;
+        }
+        #hide{
+            display: none;
+        }
+        @keyframes animateLoader {
+            0%{ width: 0%; }
+            100%{ width: 100%;}
+        }
+        .loader{
+            display: flex;
+            justify-content:end ;
+        }
+        .end{
+            position: absolute;
+            right: 1em;
+        }
+        .shift{
+            right: 4em;
+            transform: scale(4);
+        }
+        #showSmoke{
+            display: block;
+        }
+        #main{
+            height: 100vh;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="hide" class="loader">
+        <img src="stone.jpg" class="end" height="32">
+        <img src="smoke.png" id="hide" class="end shift" height="32">
+        <img src="car.png" height="32">
+    </div>
+    <div id="timer">Timer</div>
+    <div id="main">
+        <label>Timer</label>
+        <input id="input" type="number" >
+        <button id="button">DO it</button>
+    </div>
+</body>
+</html>
+<script>
+    const btn = document.querySelector("#button")
+    const input = document.querySelector("#input")
+    const timer = document.querySelector("#timer")
+
+    let state = { current : null }
+    btn.addEventListener( "click" , () => {
+        const val = parseInt(input.value)
+        timer.textContent = val
+        state.current = "Pending"
+        if( state.current == "Pending" ){
+            document.querySelector(".loader").id = "show"
+            document.querySelector("#show").style.animationDuration = `${val}s`
+        }
+        const newPromise = new Promise( (resolve , reject) => {
+            if (isNaN(val) || val <= 0) {
+            reject("Invalid input! Please enter a positive number.");
+        } else {
+            let time = val
+                setInterval( ()=>{
+                    timer.textContent = time--
+                } , 1000 )
+            setTimeout( () => {document.querySelector(".shift").id = "showSmoke"} , ((val-0.5) * 1000) )
+            setTimeout(() => {
+                resolve(val)
+            }, val * 1000); // Resolve after val * 1000 ms
+        }
+        } );
+        newPromise
+        .then( (val) => {
+            state.current = "Fulfilled"
+            console.log("Hello")
+            document.querySelector(".loader").id = "hide"
+            return val
+        } )
+        .catch( (err) => {
+            console.log(err)
+            state.current = "Rejected"
+        } )
+    } )
+</script>
