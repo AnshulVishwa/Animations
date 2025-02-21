@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="background">
-        <div onclick="change()" class="content">
-            <img src="./logo.png">
+    <main class="StartBackground">
+        <div onclick="change()" class="StartupContent">
+            <img class="startupImage" src="./logo.png">
         </div>
     </main>
 </body>
@@ -20,16 +20,16 @@
 
 <script>
     function change(){
-        document.querySelector(".content").classList.add("animate")
+        document.querySelector(".StartupContent").classList.add("StartAnimate")
         setTimeout( () => {
-            document.querySelector(".content").classList.add("remove")
+            document.querySelector(".StartupContent").classList.add("StartRemove")
         } , 5000 )
         setTimeout( () => {
-            document.querySelector(".background").classList.add("backgroundAnimate")
+            document.querySelector(".StartBackground").classList.add("STartbackgroundAnimate")
         } , 4800 )
         setTimeout( () => {
-            document.querySelector(".background").style.background = "white"
-            document.body.innerHTML = `<video autoplay><source src="video.mp4" type="video/mp4"></video>`
+            document.querySelector(".StartBackground").style.background = "white"
+            document.body.innerHTML = `<video class = "Startvideo" autoplay><source src="video.mp4" type="video/mp4"></video>`
         } , 5500 )
         setTimeout( () => {
             document.body.innerHTML = ``
