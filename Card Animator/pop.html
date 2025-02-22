@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper</title>
+    <style>
+        *{ margin: 0; padding: 0; }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            background-color: #212121;
+        }
+        .wrapper {
+            background: #eeeeee;
+            display: flex;
+            width: 300px;
+            height: 50%;
+            border-radius: 1em;
+            overflow-x: scroll;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
+            padding: 1em;
+        }
+        .card{
+            scroll-snap-align: center;
+            width: 300px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            padding: 2em;
+            text-align: center;
+            background: white;
+            border-radius: 1em;
+        }
+
+        @keyframes CardEntry {
+            0%{
+                scale: 0.5;
+                opacity: 0;
+            }
+            80%{
+                scale: 1.1;
+            }
+        }
+
+
+        .wrapper::-webkit-scrollbar {
+            width: 0; 
+            height: 0;
+        }
+
+        .wrapper {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.7) transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <h1>1st Slide</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, labore! Eum possimus dolorum at qui voluptatum ab repudiandae quis? Ducimus iure dolorum, quidem delectus unde nam quae voluptatem numquam deserunt.</p>
+        </div>
+        <div class="card">
+            <h1>2ND Slide</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, labore! Eum possimus dolorum at qui voluptatum ab repudiandae quis? Ducimus iure dolorum, quidem delectus unde nam quae voluptatem numquam deserunt.</p>
+        </div>
+        <div class="card">
+            <h1>3rd Slide</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, labore! Eum possimus dolorum at qui voluptatum ab repudiandae quis? Ducimus iure dolorum, quidem delectus unde nam quae voluptatem numquam deserunt.</p>
+        </div>
+        <div class="card">
+            <h1>4th Slide</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, labore! Eum possimus dolorum at qui voluptatum ab repudiandae quis? Ducimus iure dolorum, quidem delectus unde nam quae voluptatem numquam deserunt.</p>
+        </div>
+        <div class="card">
+            <h1>5th Slide</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, labore! Eum possimus dolorum at qui voluptatum ab repudiandae quis? Ducimus iure dolorum, quidem delectus unde nam quae voluptatem numquam deserunt.</p>
+        </div>
+        <div class="card">
+            <h1>6th Slide</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, labore! Eum possimus dolorum at qui voluptatum ab repudiandae quis? Ducimus iure dolorum, quidem delectus unde nam quae voluptatem numquam deserunt.</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const observer = new IntersectionObserver( ( entries ) => {
+        entries.forEach( (entry) => {
+            if( entry.isIntersecting ){
+                entry.target.style.animation = "CardEntry 300ms ease-in-out"
+                entry.target.style.scale = "1"
+            }
+            else{
+                entry.target.style.scale = "0.001"
+                entry.target.style.animation = "none"
+            }
+        } )
+    } )
+    document.querySelectorAll(".card").forEach( (Each) => {
+        observer.observe( Each )
+    } )
+</script>
