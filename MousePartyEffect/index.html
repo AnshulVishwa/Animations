@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{ margin: 0; padding: 0; }
+      body{ background-color: chocolate; height: 100vh; width: 100vw; }
+      body:hover{cursor: pointer;}
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+document.addEventListener('click', function(e) {
+  confetti({
+    particleCount: 5,
+    startVelocity: 10,
+    spread: 50,
+    origin: {
+      x: e.clientX / window.innerWidth,
+      y: e.clientY / window.innerHeight
+    }
+  });
+});
+</script>
+
