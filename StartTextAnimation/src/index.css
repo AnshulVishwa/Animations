@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Dancing Script", cursive;
+}
+
+#root , body{
+  height: 100vh;
+  width: 100vw;
+  background-color: #212121;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span{
+  font-size: 10em;
+  color: #F97A00;
+}
+
+/* .animate:nth-child(0){ animation: animate 35ms ease-in-out 1  ; } */
+@keyframes animate {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); text-shadow: 4px 4px 6px rgb(255 255 255 / 100%); }
+}
+
+.animate1 { animation: animate 100ms ease-in-out 1; }
+.animate2 { animation: animate 150ms ease-in-out 1; }
+.animate3 { animation: animate 200ms ease-in-out 1; }
+.animate4 { animation: animate 250ms ease-in-out 1; }
+.animate5 { animation: animate 300ms ease-in-out 1; }
+.animate6 { animation: animate 350ms ease-in-out 1; }
+.animate7 { animation: animate 400ms ease-in-out 1; }
+
