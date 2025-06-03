@@ -11,8 +11,8 @@ function App() {
       {
         backgroundColor:"white",
         borderRadius : "5em",
-        color : "#000",
-        padding : "1em 2em"
+        padding : "1em 2em",
+        color: "#000" 
       }
     )
   } )
@@ -30,12 +30,14 @@ function App() {
         duration : 0.6,
         borderRadius : "10em",
         ease : "power2.inOut",
+        backgroundColor : "#EFE4D2",
         onComplete: () => {
           gsap.to(".menu", { borderRadius: "5em" });
         }
       } )
       const split = new SplitText(".options", { type: "chars" });
       gsap.from(split.chars, {
+        color : "black",
         display : "none",
         x: 150,
         opacity: 0,
@@ -47,11 +49,12 @@ function App() {
     }
     else{
       gsap.to( ".menu" , {
-        delay : 0.5,
+        backgroundColor : "white",
         width : "auto",
         borderRadius : "5em",
         height : "auto",
-        ease : "power1.inOut"
+        duration : 0.5,
+        ease : "auto"
       } )
     }
   } , [show] )
@@ -75,7 +78,7 @@ function App() {
         }}
         className={`menu ${show ? "open" : "close"}`}
       >
-        <span style={{ opacity: show ? 0 : 1 }}>Menu</span>
+        <span className='span'>Menu</span>
         {show &&
           ["Welcome", "Book Resort", "Houses", "FeedBack"].map((option, idx) => (
             <div className="options" key={option + idx}>

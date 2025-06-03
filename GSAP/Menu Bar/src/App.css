@@ -4,4 +4,14 @@
     cursor: pointer;
     transition-property: all;
     transition-duration: 1s;
+    color : #131D4F
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.span{
+    opacity: 0;
+    color: black;
 }
